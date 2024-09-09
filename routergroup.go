@@ -4,8 +4,16 @@ type RouterGroup interface {
 	Group(path string) RouterGroup
 	RegisterMiddlewares(middlewares ...Handler)
 
-	Create(path string, handlers ...Handler)
-	Read(path string, handlers ...Handler)
-	Update(path string, handlers ...Handler)
-	Delete(path string, handlers ...Handler)
+	On(method Method, handlers ...Handler)
+	OnPath(method Method, path string, handlers ...Handler)
 }
+
+type Method string
+
+const (
+	Unknown Method = ""
+	Create  Method = "CREATE"
+	Read    Method = "READ"
+	Update  Method = "UPDATE"
+	Delete  Method = "DELETE"
+)
