@@ -7,3 +7,7 @@ type Body interface {
 type ResultGetter interface {
 	GetResult() any
 }
+
+type MapResultGetter interface {
+	GetMap() map[string]any
+}
