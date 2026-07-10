@@ -5,7 +5,7 @@ type Body interface {
 }
 
 type ResultGetter interface {
-	GetResult() any
+	GetDeliveryResult() any
 }
 
 type MapResultGetter interface {
